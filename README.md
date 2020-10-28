@@ -19,14 +19,18 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
+ > We decided to do a calendar because with the current outside situation, calendars have become an important tool in managing everyday lives
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
+ >   * [Qt](https://www.qt.io/) - GUI tool, will only use this provided we're ahead of schedule
+     * [OpenGL](http://www.opengl-tutorial.org/) - GUI tool, will only use this provided we're ahead of schedule
  > * What will be the input/output of your project?
+       * Command line Interface(input and output)
+       * Possibly GUI interface(input and output) <- this is only if we finish the command line interface first
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+         * Strategy: This design pattern is rather simple and is probably present in many, many projects. We're planning on using an algorithm that determines how busy you are in a day, depending on how busy you are the calendar will give you suggestions. Aside from this, strategy may have more instances of itself if we decide to implement more algorithms
+         * Observer: Depending on what point of "view" the user has, the output must be different. Similar to how the apple calendar expresses it's events to the viewers depending on if you're in month, week, or day. For example, if we look at a day, we should able to seem the specific time slots per day, whereas if we looked at it from a month point of view, all you should see is if you have a meeting on not that day. In addition, we're planning on making labels of appointments. meetings, or breaks so depending on what label you have, that can alter what pops up e.g: if it's a busy day just show the events, if it's a day filled with breaks maybe suggest moving your workload around.
+         * Abstract Factory: Originally we were considering using the Singleton method but we instead decided to switch to this as this design as more uses/functionality. Like we mentioned before, we are planning on creating a multitude of labels which are derived from an event. This means that we are going to try and make "Events" abstract and made subclasses like "Break", "Appointment", etc. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
