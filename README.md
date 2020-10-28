@@ -25,6 +25,8 @@
  >   * [OpenGL](http://www.opengl-tutorial.org/) - GUI tool, will only use this provided we're ahead of schedule
  > * What will be the input/output of your project?
  >   * Command line Interface(input and output)
+ >     * Input: We can have a simple line by line or specifically formatted prompt for the user to enter, or we can use an algorithm to parse the user's request to add an event to the calendar. This will be easier for the user, but harder to implement.
+ >     * Output: multiple lines of printing the calendar events. They can be displayed in different ways chosen by the user.
  >   * Possibly GUI interface(input and output) <- this is only if we finish the command line interface first
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
