@@ -19,7 +19,7 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > We decided to do a calendar because with the current outside situation, calendars have become an important tool in managing everyday lives
+ > We decided to do a calendar because with the current outside situation, calendars have become an important tool in managing everyday lives. Our plans for the calendar are to just add events(pre-made) at the user’s request and later on, we can determine how busy the user is per day, week, or month providing more information and recommending possible alterations to their schedule.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [Qt](https://www.qt.io/) - GUI tool, will only use this provided we're ahead of schedule
  >   * [OpenGL](http://www.opengl-tutorial.org/) - GUI tool, will only use this provided we're ahead of schedule
@@ -45,6 +45,16 @@
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
  
  > ![PDF of Diagram](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/CS100P2.pdf)
+ > * Strategy Pattern (Busyness Index)
+ >   * Our strategy pattern will incorporate a class that determines what to do based on how busy you are that day, week, month
+ >   * The strategy pattern will have an abstract class with a subclass that returns the business index based on day, week, or month. For example, if you wish to know how busy you are in a day, it would use an algorithm that calculates how busy you are within a 24 hr period, for example you could have like 5 events each taking up half an hour and you wouldn’t be that busy. If you wanted to check how busy you were in a week you would use a similar algorithm to that of day, but instead you would assume that your events and times are evenly distributed and that may return a different output rather than just focusing on one day, the same applies to a month.
+ > * Observer Pattern (Time State)
+ >   * This pattern determines how the user determines what view they’re looking at for the calendar, eg day, week, or month
+ >   * The Observer pattern will be similar to the strategy pattern in the sense that there will be an abstract class that is in charge of determining the unit of time (day, week, and month) through an abstract class with subclasses like day, week, and month. The point of this class is to just set the state of the viewpoint for the user similar to that of the apple calendar so when the user enters what they want to see, we change the state just like that through the observer class.
+> * Abstract Factory Pattern (Making all the objects and stuff)
+>   * This pattern basically determines how we’re going to make events for people which can vary from doctor’s appointments to basic meetings
+>   * The abstract factory pattern will create an event, but rather than just making it a chunk of time with a string description we will have premade events for the user to select from so they can just ask for the event and it’s automatically generated similar to how we choose classes at UCR. In addition to this, since the class is a creation based abstract factory class we can choose to add more and more events and nothing should have any major changes.
+
  
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
