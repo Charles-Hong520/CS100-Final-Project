@@ -33,16 +33,7 @@
  >     * Observer: Depending on what point of "view" the user has, the output must be different. Similar to how the apple calendar expresses it's events to the viewers depending on if you're in month, week, or day. For example, if we look at a day, we should able to seem the specific time slots per day, whereas if we looked at it from a month point of view, all you should see is if you have a meeting on that day. In addition, we're planning on making labels of appointments. meetings, or breaks so depending on what label you have, that can alter what pops up e.g: if it's a busy day just show the events, if it's a day filled with breaks maybe suggest moving your workload around.
  >     * Abstract Factory: Originally we were considering using the Singleton method but we instead decided to switch to this as this design as more uses/functionality. Like we mentioned before, we are planning on creating a multitude of labels which are derived from an event. This means that we are going to try and make "Events" abstract and made subclasses like "Break", "Appointment", etc. 
 
- ### Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
+ ### Further Description
  
  > ![PDF of Diagram](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/CS100P2.pdf)
  > * Strategy Pattern (Busyness Index)
