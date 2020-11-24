@@ -3,9 +3,9 @@
 
 #include "Busyness.hpp"
 
-class Day_index : public Busyness{
+class DayIndex : public Busyness{
     public:
-	Day_index() : Busyness() {};
+	DayIndex() : Busyness() {};
 	double calculate(int time, int events);
 
 };
