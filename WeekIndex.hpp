@@ -3,11 +3,11 @@
 
 #include "Busyness.hpp"
 
-class Week_index : public Busyness{
+class WeekIndex : public Busyness{
     public:
-        Week_index() : Busyness() {};
+        WeekIndex() : Busyness() {};
         double calculate(int time, int events);
 
 };
-#endif __Week_INDEX_HPP__
+#endif __WEEK_INDEX_HPP__
 
