@@ -8,9 +8,7 @@ using namespace std;
 class ClassObserver {
     public:
 	Observer();
-	void update();
-    protected:
-	vector<Event*> eventHolder;
+	virtual void update();
 };
 
 #endif;
