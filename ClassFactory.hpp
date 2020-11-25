@@ -7,7 +7,8 @@ class ClassFactory : public EventFactory {
 private:
 
 public:
-
+	ClassFactory() {};
+	virtual void createEvent(Minute start, Minute end, string name, string descr);
 };
 
 
