@@ -9,8 +9,8 @@ class Observer {
     public:
 	Observer();
 	void update();
-    private:
-	
+    protected:
+	vector<Event*> eventHolder;
 };
 
 #endif;
