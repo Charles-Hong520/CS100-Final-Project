@@ -8,7 +8,7 @@ private:
 
 public:
 	ClassFactory();
-	virtual Event* ClassFactory::createEvent(int start, int end, 
+	Event* createEvent(int start, int end, 
 		const string& name, const string& descr);
 };
 

@@ -7,8 +7,8 @@ class AppointmentFactory : public EventFactory {
 private:
 
 public:
-	AppointmentFactory() {};
-	virtual Event* AppointmentFactory::createEvent(int start, int end,
+	AppointmentFactory();
+	Event* createEvent(int start, int end,
 	 const string& name, const string& descr);
 };
 

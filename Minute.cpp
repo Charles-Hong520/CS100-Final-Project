@@ -1,7 +1,9 @@
 #include "Minute.hpp"
 
+using std::string;
+
 Minute::Minute() {totalMin = -1;}
-void Minute::parse(string input); {
+void Minute::parse(string& input) {
 /*
 Scenarios:
 	5AM
@@ -104,4 +106,4 @@ Scenarios:
 	//further implementation
 }
 
-int getMinute() {return totalMin};
+int Minute::getMinute() const {return totalMin;}
