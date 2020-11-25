@@ -1,9 +1,9 @@
 #ifndef __DAY_STATE_HPP__
 #define __DAY_STATE_HPP__
 
-class DayState : public Observer {
+class DayState : public ClassObserver {
     public:
-	Day() : Observer();
+	DayState() { };
 	void update();
     private:
 };

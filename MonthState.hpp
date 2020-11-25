@@ -1,9 +1,9 @@
 #ifndef __MONTH_STATE_HPP
 #define __MONTH_STATE_HPP
 
-class MonthState : public Observer {
+class MonthState : public ClassObserver {
     public:
-	Month() : Observer();
+	MonthState() { };
 	void update();
     private:
 	

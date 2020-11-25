@@ -1,9 +1,9 @@
 #ifndef __WEEK_STATE_HPP__
 #define __WEEK_STATE_HPP__
 
-class WeekState : public Observer {
+class WeekState : public ClassObserver {
     public:
-	Week() : Observer();
+	WeekState() { };
 	void update();
     private:
 };
