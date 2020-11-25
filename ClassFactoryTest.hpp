@@ -3,14 +3,14 @@
 
 #include "EventFactory.hpp"
 #include "gtest/gtest.h"
-
+#include "ClassFactory.hpp"
 using std::string;
 
 TEST(ClassFactoryTestSet, makeEvent1) {
 
-	ClassFactory classFac();
+	ClassFactory classFac;
 
-	Event* ev = classFac().createEvent(1140, 1190, "CS100 Lecture", "In Class Ex Today");
+	Event* ev = classFac.createEvent(1140, 1190, "CS100 Lecture", "In Class Ex Today");
 
 
     EXPECT_EQ(ev->getTag(), "Class");
@@ -23,9 +23,9 @@ TEST(ClassFactoryTestSet, makeEvent1) {
 
 TEST(ClassFactoryTestSet, makeEvent2) {
 
-	ClassFactory classFac();
+	ClassFactory classFac;
 
-	Event* ev = classFac().createEvent(100, 200, "Physics Disc", "Newton Lab");
+	Event* ev = classFac.createEvent(100, 200, "Physics Disc", "Newton Lab");
 
 
     EXPECT_EQ(ev->getTag(), "Class");

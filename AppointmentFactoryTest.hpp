@@ -3,14 +3,14 @@
 
 #include "EventFactory.hpp"
 #include "gtest/gtest.h"
-
+#include "AppointmentFactory.hpp"
 using std::string;
 
 TEST(AppointmentFactoryTestSet, makeEvent1) {
 
-	AppointmentFactory appFac();
+	AppointmentFactory appFac;
 
-	Event* ev = appFac().createEvent(720, 780, "Doctor's Visit", "Yearly Checkup");
+	Event* ev = appFac.createEvent(720, 780, "Doctor's Visit", "Yearly Checkup");
 
 
     EXPECT_EQ(ev->getTag(), "Appointment");
@@ -23,9 +23,9 @@ TEST(AppointmentFactoryTestSet, makeEvent1) {
 
 TEST(AppointmentFactoryTestSet, makeEvent2) {
 
-	AppointmentFactory appFac();
+	AppointmentFactory appFac;
 
-	Event* ev = appFac().createEvent(660, 1125, "Physical Therapy", "I am the bone of my sword");
+	Event* ev = appFac.createEvent(660, 1125, "Physical Therapy", "I am the bone of my sword");
 
 
     EXPECT_EQ(ev->getTag(), "Appointment");
