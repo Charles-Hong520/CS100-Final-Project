@@ -3,9 +3,9 @@
 
 #include "class_observer.hpp"
 
-class CalendarInterface {
+class CalendarInterface : public Calendar {
     public:
-	InterfaceDis();
+	CalendarInterface() { };
 	void attach(Observer Obs);
 	void getState();
     private:
