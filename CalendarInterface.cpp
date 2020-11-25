@@ -5,7 +5,7 @@ CalendarInterface::Interface() {
 }
 
 CalendarInterface::attach(Observer Obs) {
-    return Obs;
+    Obs.display();
 }
 
 CalendarInterface::getState() {
