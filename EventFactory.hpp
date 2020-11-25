@@ -10,7 +10,8 @@ private:
 
 public:
 	EventFactory() {};
-	virtual void createEvent(Minute start, Minute end, string name, string descr) = 0;
+	virtual Event* createEvent(int start, int end, 
+		const string& name, const string& descr) = 0;
 
 };
 

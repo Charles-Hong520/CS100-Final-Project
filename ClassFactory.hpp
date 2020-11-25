@@ -7,8 +7,9 @@ class ClassFactory : public EventFactory {
 private:
 
 public:
-	ClassFactory() {};
-	virtual void createEvent(Minute start, Minute end, string name, string descr);
+	ClassFactory();
+	virtual Event* ClassFactory::createEvent(int start, int end, 
+		const string& name, const string& descr);
 };
 
 

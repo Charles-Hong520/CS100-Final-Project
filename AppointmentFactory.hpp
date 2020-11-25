@@ -8,7 +8,8 @@ private:
 
 public:
 	AppointmentFactory() {};
-	virtual void createEvent(Minute start, Minute end, string name, string descr);
+	virtual Event* AppointmentFactory::createEvent(int start, int end,
+	 const string& name, const string& descr);
 };
 
 
