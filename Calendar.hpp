@@ -22,6 +22,7 @@ public:
 
 	void addEvent(int month, int day, Event* event);
 	void removeEvent(int month, int day, Event* event);
+	list<Event*> getElement(int index){return calendar.at(index);}
 private:
 	int dateToDays(int month, int days) const; //access index helper function
 };

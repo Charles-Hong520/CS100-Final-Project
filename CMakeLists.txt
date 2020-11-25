@@ -8,6 +8,10 @@ ADD_EXECUTABLE(test
     DayIndex.cpp
     WeekIndex.cpp
     MonthIndex.cpp
+    Event.cpp
+    Calendar.cpp
+    AppointmentFactory.cpp
+    ClassFactory.cpp
     test.cpp
 )
 
