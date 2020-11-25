@@ -9,5 +9,5 @@ class MonthIndex : public Busyness{
         double calculate(int time, int events);
 
 };
-#endif __MONTH_INDEX_HPP__
+#endif
 ~                                                                               

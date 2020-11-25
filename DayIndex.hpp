@@ -9,4 +9,4 @@ class DayIndex : public Busyness{
 	double calculate(int time, int events);
 
 };
-#endif __DAY_INDEX_HPP__
+#endif

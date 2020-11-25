@@ -2,13 +2,13 @@
 #define __BUSYNESS_HPP__
 
 #include <vector>
-
+using namespace std;
 class Busyness{
     public:
-	Base() {};
+	Busyness() {};
 
 	virtual double calculate(int time, int events) = 0;
 
 };
-#endif __BUSYNESS_HPP__
+#endif
 

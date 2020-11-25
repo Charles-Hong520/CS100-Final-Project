@@ -9,5 +9,5 @@ class WeekIndex : public Busyness{
         double calculate(int time, int events);
 
 };
-#endif __WEEK_INDEX_HPP__
+#endif
 
