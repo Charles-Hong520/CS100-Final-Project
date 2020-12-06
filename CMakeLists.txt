@@ -11,7 +11,7 @@ ADD_EXECUTABLE(test
     EventFactory.cpp
     AppointmentFactory.cpp
     ClassFactory.cpp
-    UnitTest.cpp
+    test.cpp
     Minute.cpp
 )
 

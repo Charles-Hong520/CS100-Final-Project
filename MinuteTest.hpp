@@ -3,12 +3,13 @@
 
 #include "gtest/gtest.h"
 #include "Minute.hpp"
+#include <string>
 
-
+using std::string;
 
 TEST(MinuteTestSet, invalidInput1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12:70 pm");
 
@@ -17,7 +18,7 @@ TEST(MinuteTestSet, invalidInput1) {
 
 TEST(MinuteTestSet, invalidInput2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("13:70 pm");
 
@@ -26,7 +27,7 @@ TEST(MinuteTestSet, invalidInput2) {
 
 TEST(MinuteTestSet, invalidInput3) {
 
-    Minute min();
+    Minute min;
 
     min.parse("15:50 pm");
 
@@ -35,7 +36,7 @@ TEST(MinuteTestSet, invalidInput3) {
 
 TEST(MinuteTestSet, invalidInput4) {
 
-    Minute min();
+    Minute min;
 
     min.parse(":70 pm");
 
@@ -44,7 +45,7 @@ TEST(MinuteTestSet, invalidInput4) {
 
 TEST(MinuteTestSet, invalidInput5) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12:5 pm");
 
@@ -53,7 +54,7 @@ TEST(MinuteTestSet, invalidInput5) {
 
 TEST(MinuteTestSet, invalidInput6) {
 
-    Minute min();
+    Minute min;
 
     min.parse("14 pm");
 
@@ -62,7 +63,7 @@ TEST(MinuteTestSet, invalidInput6) {
 
 TEST(MinuteTestSet, invalidInput7) {
 
-    Minute min();
+    Minute min;
 
     min.parse("18:94 pm");
 
@@ -71,7 +72,7 @@ TEST(MinuteTestSet, invalidInput7) {
 
 TEST(MinuteTestSet, invalidInput8) {
 
-    Minute min();
+    Minute min;
 
     min.parse("1:9 pm");
 
@@ -79,7 +80,7 @@ TEST(MinuteTestSet, invalidInput8) {
 }
 TEST(MinuteTestSet, invalidInput9) {
 
-    Minute min();
+    Minute min;
 
     min.parse("-1:43 pm");
 
@@ -87,7 +88,7 @@ TEST(MinuteTestSet, invalidInput9) {
 }
 TEST(MinuteTestSet, invalidInput10) {
 
-    Minute min();
+    Minute min;
 
     min.parse("AB:30 pm");
 
@@ -95,7 +96,7 @@ TEST(MinuteTestSet, invalidInput10) {
 }
 TEST(MinuteTestSet, invalidInput11) {
 
-    Minute min();
+    Minute min;
 
     min.parse("50:CD0 pm");
 
@@ -104,7 +105,7 @@ TEST(MinuteTestSet, invalidInput11) {
 
 TEST(MinuteTestSet, invalidInput12) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5:Y0 pm");
 
@@ -113,16 +114,16 @@ TEST(MinuteTestSet, invalidInput12) {
 
 TEST(MinuteTestSet, lower1) {
 
-    Minute min();
+    Minute min;
 
-    min.parse("12:50 am");
+    min.parse("12:50 pm");
 
     EXPECT_EQ(min.getMinute(), 770);
 }
 
 TEST(MinuteTestSet, lower2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12:50 am");
 
@@ -131,7 +132,7 @@ TEST(MinuteTestSet, lower2) {
 
 TEST(MinuteTestSet, NoAMPM1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12:00");
 
@@ -139,7 +140,7 @@ TEST(MinuteTestSet, NoAMPM1) {
 }
 TEST(MinuteTestSet, NoAMPM2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5:40");
 
@@ -147,7 +148,7 @@ TEST(MinuteTestSet, NoAMPM2) {
 }
 TEST(MinuteTestSet, NoAMPM3) {
 
-    Minute min();
+    Minute min;
 
     min.parse("7");
 
@@ -156,7 +157,7 @@ TEST(MinuteTestSet, NoAMPM3) {
 
 TEST(MinuteTestSet, Military1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("17:00");
 
@@ -164,7 +165,7 @@ TEST(MinuteTestSet, Military1) {
 }
 TEST(MinuteTestSet, Military2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("19:45");
 
@@ -172,7 +173,7 @@ TEST(MinuteTestSet, Military2) {
 }
 TEST(MinuteTestSet, Military3) {
 
-    Minute min();
+    Minute min;
 
     min.parse("23");
 
@@ -181,23 +182,23 @@ TEST(MinuteTestSet, Military3) {
 
 TEST(MinuteTestSet, NoMin1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5 AM");
 
-    EXPECT_EQ(min.getMinute(), -1);
+    EXPECT_EQ(min.getMinute(), 300);
 }
-TEST(MinuteTestSet, NoMin1) {
+TEST(MinuteTestSet, NoMin2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5 PM");
 
-    EXPECT_EQ(min.getMinute(), -1);
+    EXPECT_EQ(min.getMinute(), 1020);
 }
 TEST(MinuteTestSet, Proper1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5:00 AM");
 
@@ -205,7 +206,7 @@ TEST(MinuteTestSet, Proper1) {
 }
 TEST(MinuteTestSet, Proper2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5:00 PM");
 
@@ -213,7 +214,7 @@ TEST(MinuteTestSet, Proper2) {
 }
 TEST(MinuteTestSet, NoSpace1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5:00AM");
 
@@ -221,7 +222,7 @@ TEST(MinuteTestSet, NoSpace1) {
 }
 TEST(MinuteTestSet, NoSpace2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("5:00PM");
 
@@ -230,7 +231,7 @@ TEST(MinuteTestSet, NoSpace2) {
 
 TEST(MinuteTestSet, Midnight1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("0:00AM");
 
@@ -238,7 +239,7 @@ TEST(MinuteTestSet, Midnight1) {
 }
 TEST(MinuteTestSet, Midnight2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12:00AM");
 
@@ -246,7 +247,7 @@ TEST(MinuteTestSet, Midnight2) {
 }
 TEST(MinuteTestSet, Midnight3) {
 
-    Minute min();
+    Minute min;
 
     min.parse("0 AM");
 
@@ -254,7 +255,7 @@ TEST(MinuteTestSet, Midnight3) {
 }
 TEST(MinuteTestSet, Midnight4) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12 AM");
 
@@ -263,7 +264,7 @@ TEST(MinuteTestSet, Midnight4) {
 
 TEST(MinuteTestSet, Noon1) {
 
-    Minute min();
+    Minute min;
 
     min.parse("0:00 PM");
 
@@ -271,7 +272,7 @@ TEST(MinuteTestSet, Noon1) {
 }
 TEST(MinuteTestSet, Noon2) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12:00 PM");
 
@@ -279,7 +280,7 @@ TEST(MinuteTestSet, Noon2) {
 }
 TEST(MinuteTestSet, Noon3) {
 
-    Minute min();
+    Minute min;
 
     min.parse("0 PM");
 
@@ -287,7 +288,7 @@ TEST(MinuteTestSet, Noon3) {
 }
 TEST(MinuteTestSet, Noon4) {
 
-    Minute min();
+    Minute min;
 
     min.parse("12 PM");
 
