@@ -1,4 +1,3 @@
-
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 ADD_SUBDIRECTORY(googletest)
@@ -6,13 +5,16 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
+    DayIndex.cpp
+    WeekIndex.cpp
+    MonthIndex.cpp
     Event.cpp
     Calendar.cpp
-    EventFactory.cpp
     AppointmentFactory.cpp
     ClassFactory.cpp
-    test.cpp
+    EventFactory.cpp
     Minute.cpp
+    test.cpp
 )
 
 

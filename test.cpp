@@ -1,4 +1,9 @@
-#include "gtest/gtest.h"
+
+#include "DayIndex.hpp"
+#include "WeekIndex.hpp"
+#include "MonthIndex.hpp"
+#include "DayTest.hpp"
+#include "WeekTest.hpp"
 #include "EventFactoryTest.hpp"
 #include "AppointmentFactoryTest.hpp"
 #include "ClassFactoryTest.hpp"
