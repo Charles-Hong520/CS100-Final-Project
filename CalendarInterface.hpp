@@ -10,7 +10,6 @@ class CalendarInterface {
 	CalendarInterface() { };
 	void attach(ClassObserver Obs);
 	void getState();
-	void setState();
     private:
 	ClassObserver stateObj;
 	

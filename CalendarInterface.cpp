@@ -7,7 +7,3 @@ void CalendarInterface::attach(ClassObserver Obs) {
 void CalendarInterface::getState() {
     stateObj.update();
 }
-
-void CalendarInterface::setState() {
-    stateObj.update();
-}
