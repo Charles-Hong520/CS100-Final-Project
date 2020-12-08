@@ -4,7 +4,7 @@
 class MonthState : public ClassObserver {
     public:
 	MonthState() { };
-	void update();
+	void update(int num);
     private:
 	
 };

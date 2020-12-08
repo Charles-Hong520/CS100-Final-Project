@@ -4,7 +4,7 @@
 class WeekState : public ClassObserver {
     public:
 	WeekState() { };
-	void update();
+	void update(int num);
     private:
 };
 

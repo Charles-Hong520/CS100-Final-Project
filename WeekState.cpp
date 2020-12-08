@@ -1,5 +1,5 @@
 #include "WeekState.hpp"
 
-WeekState::update() {
+void WeekState::update(int num) {
 
 }

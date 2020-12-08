@@ -1,5 +1,5 @@
 #include "DayState.hpp"
 
-DayState::update() {
-
+void DayState::update(int num) {
+    
 }

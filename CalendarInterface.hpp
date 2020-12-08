@@ -5,7 +5,7 @@
 
 class ClassObserver;
 
-class CalendarInterface : public Calendar {
+class CalendarInterface {
     public:
 	CalendarInterface() { };
 	void attach(ClassObserver Obs);

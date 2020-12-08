@@ -1,14 +1,14 @@
 #ifndef __CLASS_OBSERVER_HPP__
 #define __CLASS_OBSERVER_HPP__
 
-#include <vector>
+#include "Calendar.hpp"
 
 using namespace std;
 
-class ClassObserver {
+class ClassObserver : public Calendar {
     public:
 	Observer();
-	virtual void update() = 0;
+	virtual void update(int num) = 0;
 };
 
 #endif;

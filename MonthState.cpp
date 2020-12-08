@@ -1,5 +1,5 @@
 #include "MonthState.hpp"
 
-MonthState::update() {
+void MonthState::update(int num) {
 
 }
