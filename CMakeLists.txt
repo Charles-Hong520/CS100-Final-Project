@@ -5,6 +5,8 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
+    Calendar.cpp
+    Event.cpp
     CalendarInterface.cpp
     DayState.cpp
     WeekState.cpp

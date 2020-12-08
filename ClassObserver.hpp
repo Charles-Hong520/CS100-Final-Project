@@ -2,6 +2,7 @@
 #define __CLASS_OBSERVER_HPP__
 
 #include "Calendar.hpp"
+#include "Event.hpp"
 
 using namespace std;
 
