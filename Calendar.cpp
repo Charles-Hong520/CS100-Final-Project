@@ -29,24 +29,72 @@ using std::list;
 		return daysTilMonth[month] + days;
 	}
 //public:
+	
 	Calendar::Calendar() {
 		calendar.resize(366); //This will be a 2020 calendar
 	} //will only have 1 year
 
-	void Calendar::addEvent(int month, int day, Event* event) {
-		int index = dateToDays(month, day);
-		calendar.at(index).push_back(event);
+	void Calendar::addEvent(int days, Event* event) {
+		calendar.at(days).push_back(event);
 	}
 
-	void Calendar::removeEvent(int month, int day, Event* event) {
-		int index = dateToDays(month, day);
-		list<Event*>::iterator it;
-		for(it = calendar.at(index).begin(); it != calendar.at(index).end(); it++) {
-			if(*it == event) {
-				delete event;
-				calendar.at(index).erase(it);
+	void Calendar::removeEvent(int days, int eventNumber) {
+		eventNumber--;
+		
+		if(calendar.at(days).size() <= eventNumber) {
+			return;
+		}
+		auto it = calendar.at(days).begin();
+		unsigned i = 0;
+		while(i < eventNumber) {
+			it++;
+			i++;
+		}
+
+		delete *it;
+		calendar.at(days).erase(it);
+	}
+
+	Event* Calendar::getEvent(int days, int startTime, int endTime, const string& name, const string& descr) {
+		for(auto it : calendar.at(days)) {
+			if(it->getStartMin() == startTime && it->getEndMin() == endTime && it->getName() == name && it->getDescription() == descr) {
+				return it;
 			}
 		}
+		return nullptr;
 	}
 
+	Event* Calendar::getEvent(int days, int eventNumber) {
+		//if user sees 1-9, first event is 0, last event is 8
+		eventNumber--;
+		
+		if(calendar.at(days).size() <= eventNumber) {
+			return nullptr;
+		}
+		auto it = calendar.at(days).begin();
+		unsigned i = 0;
+		while(i < eventNumber) {
+			it++;
+			i++;
+		}
+		return *it;
+	}
 
+	bool Calendar::empty() {
+		for(unsigned i = 0; i < 366; i++) {
+			if(!calendar.at(i).empty()) return false;
+		}
+		return true;
+	}
+
+	int Calendar::size() const {
+		int size = 0;
+		for(unsigned i = 0; i < 366; i++) {
+			size += calendar.at(i).size();
+		}
+		return size;
+	}
+	int Calendar::sizeOfDay(int day) const {
+		return calendar.at(day).size();
+		
+	}
