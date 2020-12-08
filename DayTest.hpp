@@ -1,3 +1,6 @@
+#ifndef DAY_TEST_HPP
+#define DAY_TEST_HPP
+
 #include "gtest/gtest.h"
 #include "DayIndex.hpp"
 
@@ -19,3 +22,4 @@ TEST(DayTestSet, NegEventTest) {
     EXPECT_EQ(val, 0);
 }
 
+#endif

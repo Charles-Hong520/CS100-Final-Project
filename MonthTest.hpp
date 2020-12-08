@@ -1,3 +1,6 @@
+#ifndef MONTH_TEST_HPP
+#define MONTH_TEST_HPP
+
 #include "gtest/gtest.h"
 #include "MonthIndex.hpp"
 
@@ -18,5 +21,6 @@ TEST(MonthTestSet, NegEventTest) {
     double val = test.calculate(10,-1);
     EXPECT_EQ(val, 0);
 }
+#endif
 
 

@@ -9,4 +9,4 @@ class MonthIndex : public Busyness{
         double calculate(int time, int events);
 
 };
-#endif~                                                                        
+#endif                                                                 
