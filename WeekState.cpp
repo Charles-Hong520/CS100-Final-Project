@@ -25,5 +25,9 @@ void WeekState::update(int num) {
 	    	count++;
 	    }
         }
+	else {
+	    cout << "No events" << endl;
+	}
+	cout << endl;
     }  
 }

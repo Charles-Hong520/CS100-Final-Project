@@ -6,7 +6,6 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
     DayState.cpp
-    test.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

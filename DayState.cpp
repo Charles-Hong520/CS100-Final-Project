@@ -17,11 +17,15 @@ void DayState::update(int num) {
     }
     cout << monthCount << "/" << numDays + 1 << endl;   
 
-    if(calendar.getDay(num).size() != 0) {
+    if(calendar.at(num).size() != 0) {
 	int count = 1;
 	for(auto ev : calendar.at(num)) {
 	    cout << count << ". " << ev -> getName() << endl;
 	    count++;
 	}
     }
+    else {
+	cout << "No events" << endl;
+    }
+    cout << endl;
 }
