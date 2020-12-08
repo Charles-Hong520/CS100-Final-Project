@@ -8,7 +8,7 @@ using namespace std;
 class ClassObserver : public Calendar {
     public:
 	ClassObserver() { };
-	virtual void update(int num) = 0;
+	void update(int num) { };
 };
 
 #endif
