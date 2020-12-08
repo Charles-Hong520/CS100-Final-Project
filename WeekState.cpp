@@ -3,7 +3,7 @@
 
 using namespace std;
 
-virtual void WeekState::update(int num) {
+void WeekState::update(Calendar calendar, int num) {
     int count = 1;
     for(int j = num; j < num + 7; ++j) {
 	int numDays = num;
@@ -20,7 +20,7 @@ virtual void WeekState::update(int num) {
    	cout << monthCount << "/" << numDays + 1 << endl;   
 
     	if(calendar.getDay(num).size() != 0) {
-	    for(auto ev : calendar.at(num)) {
+	    for(auto ev : calendar.getDay(num)) {
 	    	cout << count << ". " << ev -> getName() << endl;
 	    	count++;
 	    }

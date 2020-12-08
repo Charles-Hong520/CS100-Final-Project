@@ -3,7 +3,7 @@
 
 using namespace std;
 
-virtual void DayState::update(int num) {
+void DayState::update(Calendar calendar, int num) {
     int numDays = num;
     int monthCount = 1;
     int daysToMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30};
@@ -19,7 +19,7 @@ virtual void DayState::update(int num) {
 
     if(calendar.getDay(num).size() != 0) {
 	int count = 1;
-	for(auto ev : calendar.at(num)) {
+	for(auto ev : calendar.getDay(num)) {
 	    cout << count << ". " << ev -> getName() << endl;
 	    count++;
 	}

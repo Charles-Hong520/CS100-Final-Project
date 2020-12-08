@@ -19,7 +19,7 @@ protected:
 public:
 	Calendar(); //will only have 1 year
 
-	list<Event*> getElement(int index){return calendar.at(index);}
+	list<Event*> getDay(int index){return calendar.at(index);}
 
 	void addEvent(int day, Event* event);
 	void removeEvent(int days, int eventNumber);
