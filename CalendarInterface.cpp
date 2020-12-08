@@ -4,6 +4,6 @@ void CalendarInterface::attach(ClassObserver Obs) {
     stateObj = Obs;
 }
 
-void CalendarInterface::getState() {
-    stateObj.update();
+void CalendarInterface::getState(int num1) {
+    stateObj.update(num1);
 }
