@@ -3,7 +3,7 @@
 using std::string;
 
 Minute::Minute() {totalMin = -1;}
-void Minute::parse(string& input) {
+void Minute::parse(string input) {
 /*
 Scenarios:
 	5AM
@@ -68,8 +68,9 @@ Scenarios:
 			}
 		}
 		//if : doesnt exist, then it is hour
-		hour = std::stoi(input) % 12;
+		hour = std::stoi(input);
 		if(hour > 12) return;
+		hour %= 12;
 	} else {
 		//has :
 		//extract minutes
@@ -95,8 +96,10 @@ Scenarios:
 				}
 			}
 
-			hour = std::stoi(input) % 12;
+			hour = std::stoi(input);
 			if(hour > 12) return;
+			hour %= 12;
+
 		}
 	}
 

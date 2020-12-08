@@ -9,7 +9,6 @@
 #include "ClassFactory.hpp"
 #include "Event.hpp"
 
-
 using std::string;
 using std::vector;
 using std::list;
@@ -20,11 +19,19 @@ private:
 public:
 	Calendar(); //will only have 1 year
 
-	void addEvent(int month, int day, Event* event);
-	void removeEvent(int month, int day, Event* event);
 	list<Event*> getElement(int index){return calendar.at(index);}
-private:
-	int dateToDays(int month, int days) const; //access index helper function
+
+	void addEvent(int day, Event* event);
+	void removeEvent(int days, int eventNumber);
+
+	Event* getEvent(int days, int startTime, int endTime, const string& name, const string& descr);
+	Event* getEvent(int days, int eventNumber);
+
+	bool empty();
+
+	int size() const;
+	int sizeOfDay(int day) const;
+	int dateToDays(int month, int days) const;
 };
 
 

@@ -12,6 +12,8 @@ ADD_EXECUTABLE(test
     Calendar.cpp
     AppointmentFactory.cpp
     ClassFactory.cpp
+    EventFactory.cpp
+    Minute.cpp
     test.cpp
 )
 
