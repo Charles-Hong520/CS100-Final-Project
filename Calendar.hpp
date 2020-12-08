@@ -9,7 +9,6 @@
 #include "ClassFactory.hpp"
 #include "Event.hpp"
 
-
 using std::string;
 using std::vector;
 using std::list;
@@ -30,9 +29,7 @@ public:
 
 	int size() const;
 	int sizeOfDay(int day) const;
-	int dateToDays(int month, int days) const; 
-
-	
+	int dateToDays(int month, int days) const;
 };
 
 
