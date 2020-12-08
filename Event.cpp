@@ -15,7 +15,7 @@ int Event::getStartMin() const {return startMin;}
 int Event::getEndMin() const {return endMin;}
 string Event::getName() const {return name;}
 string Event::getDescription() const {return description;}
-int Event::getDuration() const {return startMin - endMin;}
+int Event::getDuration() const {return -startMin + endMin;}
 
 
 void Event::setStartMin(int m) {startMin = m;}

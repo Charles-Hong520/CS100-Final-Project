@@ -9,9 +9,9 @@ class EventFactory {
 private:
 
 public:
-	EventFactory() {};
+	EventFactory();
 	virtual Event* createEvent(int start, int end, 
-		const string& name, const string& descr) = 0;
+		const string& name, const string& descr);
 
 };
 

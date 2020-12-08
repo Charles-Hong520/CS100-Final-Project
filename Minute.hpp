@@ -8,7 +8,7 @@ private:
 	int totalMin;
 public:
 	Minute();
-	void parse(string& input);
+	void parse(string input);
 	int getMinute() const;
 };
 
