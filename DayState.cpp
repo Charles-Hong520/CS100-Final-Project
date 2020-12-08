@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void DayState::update(int num) {
+virtual void DayState::update(int num) {
     int numDays = num;
     int monthCount = 1;
     int daysToMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30};

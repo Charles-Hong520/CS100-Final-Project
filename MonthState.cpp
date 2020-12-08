@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void MonthState::update(int num) {
+virtual void MonthState::update(int num) {
     int daysToMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int count = 1;
     int totalDays = 0;

@@ -4,8 +4,7 @@
 class WeekState : public ClassObserver {
     public:
 	WeekState() : ClassObserver() { };
-        void update(int num);
-    private:
+        virtual void update(int num);
 };
 
 #endif

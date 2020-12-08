@@ -4,8 +4,7 @@
 class MonthState : public ClassObserver {
     public:
 	MonthState() : ClassObserver() { };
-	void update(int num);
-    private:
+	virtual void update(int num);
 	
 };
 

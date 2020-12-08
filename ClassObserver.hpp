@@ -5,10 +5,10 @@
 
 using namespace std;
 
-class ClassObserver : public Calendar {
+class ClassObserver {
     public:
 	ClassObserver() { };
-	void update(int num) { };
+	virtual void update(int num) = 0;
 };
 
 #endif

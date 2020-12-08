@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void WeekState::update(int num) {
+virtual void WeekState::update(int num) {
     int count = 1;
     for(int j = num; j < num + 7; ++j) {
 	int numDays = num;
