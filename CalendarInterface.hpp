@@ -1,7 +1,7 @@
 #ifndef __CALENDAR_INTERFACE_HPP__
 #define __CALENDAR_INTERFACE_HPP__
 
-#include "class_observer.hpp"
+#include "ClassObserver.hpp"
 
 class ClassObserver;
 
@@ -15,4 +15,4 @@ class CalendarInterface {
 	
 };
 
-#endif;
+#endif

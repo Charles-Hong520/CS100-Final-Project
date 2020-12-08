@@ -5,7 +5,11 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
+    CalendarInterface.cpp
     DayState.cpp
+    WeekState.cpp
+    MonthState.cpp
+    testing_main.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
