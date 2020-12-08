@@ -10,4 +10,4 @@ class DayState : public ClassObserver {
     private:
 };
 
-#endif;
+#endif
