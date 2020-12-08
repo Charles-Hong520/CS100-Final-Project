@@ -8,7 +8,7 @@ using namespace std;
 class ClassObserver {
     public:
 	Observer();
-	virtual void update();
+	virtual void update() = 0;
 };
 
 #endif;

@@ -1,9 +1,13 @@
 #include "CalendarInterface.hpp"
 
-CalendarInterface::attach(Observer Obs) {
-    Obs.update();
+void CalendarInterface::attach(ClassObserver Obs) {
+    stateObj = Obs;
 }
 
-CalendarInterface::getState() {
-    
+void CalendarInterface::getState() {
+    stateObj.update();
+}
+
+void CalendarInterface::setState() {
+    stateObj.update();
 }

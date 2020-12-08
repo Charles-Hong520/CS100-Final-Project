@@ -3,12 +3,16 @@
 
 #include "class_observer.hpp"
 
+class ClassObserver;
+
 class CalendarInterface : public Calendar {
     public:
 	CalendarInterface() { };
-	void attach(Observer Obs);
+	void attach(ClassObserver Obs);
 	void getState();
+	void setState();
     private:
+	ClassObserver stateObj;
 	
 };
 
