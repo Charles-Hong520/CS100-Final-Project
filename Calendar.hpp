@@ -14,7 +14,7 @@ using std::vector;
 using std::list;
 
 class Calendar {
-private:
+protected:
 	vector<list<Event*> > calendar;
 public:
 	Calendar(); //will only have 1 year
