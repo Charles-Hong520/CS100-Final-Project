@@ -5,7 +5,7 @@
 
 class DayState : public ClassObserver {
     public:
-	DayState() { };
+	DayState() : ClassObserver() { };
 	void update(int num);
     private:
 };

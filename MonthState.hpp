@@ -3,7 +3,7 @@
 
 class MonthState : public ClassObserver {
     public:
-	MonthState() { };
+	MonthState() : ClassObserver() { };
 	void update(int num);
     private:
 	

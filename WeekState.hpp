@@ -3,7 +3,7 @@
 
 class WeekState : public ClassObserver {
     public:
-	WeekState() { };
+	WeekState() : ClassObserver() { };
 	void update(int num);
     private:
 };
