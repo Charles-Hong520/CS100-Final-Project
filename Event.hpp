@@ -13,6 +13,7 @@ private:
 public:
 	Event(int startMin, int endMin, const string& name,
 		const string& description, const string& tag);
+	~Event() {}
 	string getTag() const;
 	int getStartMin() const;
 	int getEndMin() const;

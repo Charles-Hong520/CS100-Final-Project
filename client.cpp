@@ -275,6 +275,6 @@ int main() {
 			6. quit program
 	}
 	*/
-
+	delete co;
 	return 0;
 }
