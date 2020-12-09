@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void WeekState::update(Calendar calendar, int num) {
+void WeekState::update(const Calendar& calendar, int num) {
     int count = 1;
     int finalNum = num + 7;
     for(int j = num; j < finalNum; ++j) {

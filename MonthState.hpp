@@ -7,7 +7,7 @@ class MonthState : public ClassObserver {
     public:
 	MonthState() : ClassObserver() { };
 	virtual ~MonthState() {}
-	void update(Calendar calendar, int num);
+	void update(const Calendar& calendar, int num);
 	
 };
 

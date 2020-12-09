@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void DayState::update(Calendar calendar, int num) {
+void DayState::update(const Calendar& calendar, int num) {
     int numDays = num;
     int monthCount = 1;
     int daysToMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30};

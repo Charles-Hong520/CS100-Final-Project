@@ -11,7 +11,7 @@ class CalendarInterface {
 	CalendarInterface() { };
 
 	void attach(ClassObserver* Obs);
-	void getState(Calendar c, int num1);
+	void getState(const Calendar& c, int num1);
     private:
 	ClassObserver* stateObj;
 

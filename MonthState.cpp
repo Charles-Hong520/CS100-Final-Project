@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void MonthState::update(Calendar calendar, int num) {
+void MonthState::update(const Calendar& calendar, int num) {
     int daysToMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int count = 1;
     int totalDays = 0;
