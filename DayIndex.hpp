@@ -6,6 +6,7 @@
 class DayIndex : public Busyness{
     public:
 	DayIndex() : Busyness() {};
+
 	double calculate(int time, int events);
 
 };

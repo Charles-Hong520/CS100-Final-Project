@@ -6,7 +6,8 @@
 class DayState : public ClassObserver {
     public:
 	DayState() : ClassObserver() { };
-	void update(Calendar calendar, int num);
+	virtual ~DayState(){}
+	void update(const Calendar& calendar, int num);
 };
 
 #endif

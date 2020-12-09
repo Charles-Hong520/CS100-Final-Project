@@ -16,17 +16,18 @@ protected:
 	vector<list<Event*> > calendar;
 public:
 	Calendar(); //will only have 1 year
+	~Calendar();
 
-	list<Event*> getDay(int days) {return calendar.at(days);}
+	list<Event*> getDay(int days) const {return calendar.at(days);}
 
 
 	void addEvent(int day, Event* event);
 	void removeEvent(int days, int eventNumber);
 
-	Event* getEvent(int days, int startTime, int endTime, const string& name, const string& descr);
-	Event* getEvent(int days, int eventNumber);
+	Event* getEvent(int days, int startTime, int endTime, const string& name, const string& descr) const;
+	Event* getEvent(int days, int eventNumber) const;
 
-	bool empty();
+	bool empty() const;
 
 	int size() const;
 	int sizeOfDay(int day) const;

@@ -6,7 +6,8 @@
 class WeekState : public ClassObserver {
     public:
 	WeekState() : ClassObserver() { };
-        void update(Calendar calendar, int num);
+	virtual ~WeekState() {}
+    void update(const Calendar& calendar, int num);
 };
 
 #endif

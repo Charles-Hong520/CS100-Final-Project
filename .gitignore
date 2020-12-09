@@ -1,7 +1,14 @@
 	CMakeCache.txt
 	CMakeFiles/
 	Makefile
-cmake_install.cmake
+	cmake_install.cmake
 	lib/
 	test
 	print_test
+	main
+	CMakeCache.txt
+	CMakeFiles/
+	Makefile
+	lib/
+	print_test
+	test

@@ -29,6 +29,25 @@ test.cpp
 
 )
 
+ADD_EXECUTABLE(main
+DayIndex.cpp
+    WeekIndex.cpp
+    MonthIndex.cpp
+    Event.cpp
+Calendar.cpp
+AppointmentFactory.cpp
+ClassFactory.cpp
+EventFactory.cpp
+Minute.cpp
+    CalendarInterface.cpp
+    DayState.cpp
+    WeekState.cpp
+    MonthState.cpp
+client.cpp
+
+
+)
+
 
 TARGET_LINK_LIBRARIES(test gtest)
 

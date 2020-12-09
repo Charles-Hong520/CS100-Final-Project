@@ -34,6 +34,16 @@ using std::list;
 		calendar.resize(366); //This will be a 2020 calendar
 	} //will only have 1 year
 
+	Calendar::~Calendar() {
+		for(auto l : calendar) {
+			if(l.size() != 0) {
+				for(auto ev : l) {
+					if(ev) delete ev;
+				}
+			}
+		}
+	}
+
 	void Calendar::addEvent(int days, Event* event) {
 		calendar.at(days).push_back(event);
 	}
@@ -55,7 +65,7 @@ using std::list;
 		calendar.at(days).erase(it);
 	}
 
-	Event* Calendar::getEvent(int days, int startTime, int endTime, const string& name, const string& descr) {
+	Event* Calendar::getEvent(int days, int startTime, int endTime, const string& name, const string& descr) const{
 		for(auto it : calendar.at(days)) {
 			if(it->getStartMin() == startTime && it->getEndMin() == endTime && it->getName() == name && it->getDescription() == descr) {
 				return it;
@@ -64,7 +74,7 @@ using std::list;
 		return nullptr;
 	}
 
-	Event* Calendar::getEvent(int days, int eventNumber) {
+	Event* Calendar::getEvent(int days, int eventNumber) const {
 		//if user sees 1-9, first event is 0, last event is 8
 		eventNumber--;
 		
@@ -80,7 +90,7 @@ using std::list;
 		return *it;
 	}
 
-	bool Calendar::empty() {
+	bool Calendar::empty() const {
 		for(unsigned i = 0; i < 366; i++) {
 			if(!calendar.at(i).empty()) return false;
 		}

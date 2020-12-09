@@ -13,6 +13,7 @@ private:
 public:
 	Event(int startMin, int endMin, const string& name,
 		const string& description, const string& tag);
+	~Event() {}
 	string getTag() const;
 	int getStartMin() const;
 	int getEndMin() const;
@@ -25,6 +26,8 @@ public:
 	void setEndMin(int m);
 	void setName(const string& n);
 	void setDescription(const string& d);
+	string numToTime(int num) const;
+	string getDetailed() const ;
 };
 
 
