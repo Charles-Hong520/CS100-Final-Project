@@ -182,7 +182,8 @@ int main() {
 					inDay5 = cinInt();
 					int calculatedDayIndex5 = c.dateToDays(inMonth5, inDay5);
 					if(calculatedDayIndex5 != -1) {
-					
+						if(co) delete co;
+						co = new DayState();
 						
 						ci.attach(co);
 						ci.getState(c, calculatedDayIndex5);
@@ -200,7 +201,9 @@ int main() {
 					int calculatedDayIndex5 = c.dateToDays(inMonth5, inDay5);
 					if(calculatedDayIndex5 != -1) {
 					
-					
+						if(co) delete co;
+						co = new WeekState();
+
 						ci.attach(co);
 						ci.getState(c, calculatedDayIndex5);
 
@@ -211,7 +214,8 @@ int main() {
 				} else {
 					int inMonth5 = cinInt();
 					if(inMonth5 != -1) {
-
+						if(co) delete co;
+						co = new MonthState();
 
 						ci.attach(co);
 						ci.getState(c, inMonth5);
