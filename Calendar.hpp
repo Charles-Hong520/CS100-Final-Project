@@ -4,9 +4,7 @@
 #include <list>
 #include <vector>
 
-#include "EventFactory.hpp"
-#include "AppointmentFactory.hpp"
-#include "ClassFactory.hpp"
+
 #include "Event.hpp"
 
 using std::string;
@@ -19,7 +17,8 @@ protected:
 public:
 	Calendar(); //will only have 1 year
 
-	list<Event*> getDay(int index){return calendar.at(index);}
+	list<Event*> getDay(int days) {return calendar.at(days);}
+
 
 	void addEvent(int day, Event* event);
 	void removeEvent(int days, int eventNumber);
