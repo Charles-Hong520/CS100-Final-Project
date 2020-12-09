@@ -39,5 +39,5 @@ string Event::numToTime(int num) const {
 }
 
 string Event::getDetailed() const {
-  return name +": "+ numToTime(startMin) +" - " + numToTime(endMin) + " Type: " +tag +" " + description + "\n";
+  return name +": "+ numToTime(startMin) +" - " + numToTime(endMin) + ", Type: " +tag +", " + description + "\n";
 }
