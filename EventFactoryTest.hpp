@@ -34,4 +34,20 @@ TEST(EventFactoryTestSet, makeEvent2) {
     EXPECT_EQ(ev->getDescription(), "I am the bone of my sword");
     EXPECT_EQ(ev->getDuration(), 465);
 }
+
+TEST(EventFactoryTestSet, makeEvent3) {
+
+    EventFactory Fac;
+
+    Event* ev = Fac.createEvent(660, 1125, "Physical Therapy", "I am the bone of my sword");
+
+
+    EXPECT_EQ(ev->getTag(), "");
+    EXPECT_EQ(ev->getStartMin(), 660);
+    EXPECT_EQ(ev->getEndMin(), 1125);
+    EXPECT_EQ(ev->getName(), "Physical Therapy");
+    EXPECT_EQ(ev->getDescription(), "I am the bone of my sword");
+    EXPECT_EQ(ev->getDuration(), 465);
+    EXPECT_EQ(ev->numToTime(660), "11:00 AM");
+}
 #endif

@@ -26,6 +26,8 @@ public:
 	void setEndMin(int m);
 	void setName(const string& n);
 	void setDescription(const string& d);
+	string numToTime(int num) const;
+	string getDetailed() const ;
 };
 
 
