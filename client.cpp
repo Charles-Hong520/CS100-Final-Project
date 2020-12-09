@@ -32,7 +32,7 @@ string menu = "\n1. Add Event\n2. Remove Event\n3. View Event Details\n4. Determ
 
 string invalidInputMM = "\nInvalid input, going back to main menu.\n";
 string invalidInputName = "\nInvalid input, Need a name! Going back to main menu.\n";
-
+string invalidTime = "\nInvalid Time, Going back to main menu.\n";
 
 string promptTag1 = "\nSelect Tag:\n1. No Tag\n2. Appointment\n3. Class\n";
 string promptName1 = "\nEnter Name of Event:\n";
@@ -41,6 +41,11 @@ string promptStartTime1 = "\nEnter Starting Time of the Event, followed by an AM
 string promptEndTime1 = "\nEnter Ending Time of the Event, followed by an AM or PM\n";
 string promptDescription1 = "\nEnter Description of the Event\n";
 string addEventComplete = "\nEvent has been created\n";
+
+string promptView3 = "\nEnter the day that the event is on in this format: MM DD (ex: 5 23, 12 4, 10 31)\n";
+string promptSelect3 = "\nSelect the event number to view its full details\n";
+string emptyDay3 = "\nThere are no events on this day\n";
+
 
 string promptView5 = "\nSelect Viewing Options:\n1. View a Day\n2. View a Week\n3. View a Month\n";
 string promptDay5 = "\nEnter the day you wish to view in this format: MM DD (ex: 5 23, 12 4, 10 31)\n";
@@ -130,32 +135,35 @@ int main() {
 							min.parse(inEndTime1);
 							int endTime1 = min.getMinute();
 							if(endTime1 != -1) {
+								if(startTime1 < endTime1) {
+									string inDescription1 = "";
+									cout << promptDescription1 << endl;
+								
+									getline(cin, inDescription1); cout << endl;
 
-								string inDescription1 = "";
-								cout << promptDescription1 << endl;
-							
-								getline(cin, inDescription1); cout << endl;
-
-								EventFactory* factory;
-								if(inNum1 == 1) {
-									factory = new EventFactory();
-								} else if(inNum1 == 2) {
-									factory = new AppointmentFactory();
+									EventFactory* factory;
+									if(inNum1 == 1) {
+										factory = new EventFactory();
+									} else if(inNum1 == 2) {
+										factory = new AppointmentFactory();
+									} else {
+										factory = new ClassFactory();
+									}
+									Event* ev = factory->createEvent(startTime1, endTime1, inName1, inDescription1);
+									c.addEvent(calculatedDayIndex1, ev);
+									cout << addEventComplete << endl;
+									delete factory;
 								} else {
-									factory = new ClassFactory();
+									cout << invalidTime << endl;
 								}
-								Event* ev = factory->createEvent(startTime1, endTime1, inName1, inDescription1);
-								c.addEvent(calculatedDayIndex1, ev);
-								cout << addEventComplete << endl;
-								delete factory;
 							} else {
-								cout << invalidInputMM << endl;
+								cout << invalidTime << endl;
 							}
 						} else {
-							cout << invalidInputMM << endl;
+							cout << invalidTime << endl;
 						}
 					} else {
-						cout << invalidInputMM << endl;
+						cout << invalidInputName << endl;
 					}
 				} else {
 					cout << invalidInputMM << endl;
@@ -166,7 +174,27 @@ int main() {
 		} else if(menuInput == 2) {
 
 		} else if(menuInput == 3) {
-			
+			cout << promptView3 << endl;
+			int inMonth3 = cinInt(' ');
+			int inDay3 = cinInt();
+			int calculatedDayIndex3 = c.dateToDays(inMonth3, inDay3);
+			if(calculatedDayIndex3 != -1) {
+				//print the list of events on this day
+
+				if(c.getDay(calculatedDayIndex3).size() != 0) {
+					int count = 1;
+					for(auto it : c.getDay(calculatedDayIndex3)) {
+						cout << count << ". " << it->getDetailed();
+						count++;
+					}
+					cout << endl;
+				} else {
+					cout << emptyDay3 << endl;
+				}
+
+			} else {
+				cout << invalidInputMM << endl;
+			}
 		} else if(menuInput == 4) {
 			
 		} else if(menuInput == 5) {
