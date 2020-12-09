@@ -35,7 +35,7 @@ Scenarios:
 			input[i] += 32;
 		}
 	}
-	
+	while(input.at(input.size()-1) == ' ') input.pop_back();
 	int s = input.size();
 	//find ampm and eliminate
 	if(input[s-1] == 'm' && input[s-2] == 'p') {

@@ -6,5 +6,5 @@ void CalendarInterface::attach(ClassObserver* Obs) {
 }
 
 void CalendarInterface::getState(Calendar c, int num1) {  
-    stateObj -> update(c, num1);
+    stateObj->update(c, num1);
 }

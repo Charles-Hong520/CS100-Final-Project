@@ -43,6 +43,9 @@ string promptDescription1 = "\nEnter Description of the Event\n";
 string addEventComplete = "\nEvent has been created\n";
 
 string promptView5 = "\nSelect Viewing Options:\n1. View a Day\n2. View a Week\n3. View a Month\n";
+string promptDay5 = "\nEnter the day you wish to view in this format: MM DD (ex: 5 23, 12 4, 10 31)\n";
+string promptWeek5 = "\nEnter the date of the beginning of the week in this format: MM DD (ex: 5 23, 12 4, 10 31)\n";
+string promptMonth5 = "\nEnter the month number that you wish to view. (1-12)\n";
 
 string exitProgram = "\nExiting program\n";
 
@@ -63,7 +66,7 @@ bool isNumber(string input) {
 
 int cinInt() {
 	string input;
-	getline(cin, input);
+	getline(cin, input); cout << endl;
 	if(isNumber(input)) return std::stoi(input);
 	else return -1;
 }
@@ -71,15 +74,19 @@ int cinInt() {
 int cinInt(char stopper) {
 	string input;
 	getline(cin, input, stopper);
+
 	if(isNumber(input)) return std::stoi(input);
 	else return -1;
 }
+
+
 
 int main() {
 
 	Calendar c;
 
 	CalendarInterface ci;
+	ClassObserver* co = new WeekState();
 
 	cout << intro << endl;
 	cout << promptMain << menu << endl;
@@ -167,11 +174,49 @@ int main() {
 			int inNum5 = cinInt();
 			if(inNum5 >= 1 && inNum5 <= 3) {
 				if(inNum5 == 1) {
+					int inMonth5, inDay5;
+					cout << promptDay5 << endl;
+		
+					inMonth5 = cinInt(' ');
+					inDay5 = cinInt();
+					int calculatedDayIndex5 = c.dateToDays(inMonth5, inDay5);
+					if(calculatedDayIndex5 != -1) {
+					
+						
+						ci.attach(co);
+						ci.getState(c, calculatedDayIndex5);
 
+					} else {
+						cout << invalidInputMM << endl;
+					}
+					// ci.attach(new DayState());
 				} else if(inNum5 == 2) {
+					int inMonth5, inDay5;
+					cout << promptWeek5 << endl;
+		
+					inMonth5 = cinInt(' ');
+					inDay5 = cinInt();
+					int calculatedDayIndex5 = c.dateToDays(inMonth5, inDay5);
+					if(calculatedDayIndex5 != -1) {
+					
+					
+						ci.attach(co);
+						ci.getState(c, calculatedDayIndex5);
 
+					} else {
+						cout << invalidInputMM << endl;
+					}
+					
 				} else {
+					int inMonth5 = cinInt();
+					if(inMonth5 != -1) {
 
+
+						ci.attach(co);
+						ci.getState(c, inMonth5);
+					} else {
+						cout << invalidInputMM << endl;
+					}
 				}
 			} else {
 				cout << invalidInputMM << endl;

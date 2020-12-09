@@ -6,6 +6,7 @@
 class DayState : public ClassObserver {
     public:
 	DayState() : ClassObserver() { };
+	virtual ~DayState(){}
 	void update(Calendar calendar, int num);
 };
 

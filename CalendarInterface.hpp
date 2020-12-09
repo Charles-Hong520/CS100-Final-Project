@@ -9,7 +9,7 @@
 class CalendarInterface {
     public:
 	CalendarInterface() { };
-	// ~CalendarInterface();
+
 	void attach(ClassObserver* Obs);
 	void getState(Calendar c, int num1);
     private:
