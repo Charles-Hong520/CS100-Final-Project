@@ -12,12 +12,13 @@ using std::vector;
 using std::list;
 
 class Calendar {
-private:
+protected:
 	vector<list<Event*> > calendar;
 public:
 	Calendar(); //will only have 1 year
 
 	list<Event*> getDay(int days) {return calendar.at(days);}
+
 
 	void addEvent(int day, Event* event);
 	void removeEvent(int days, int eventNumber);
