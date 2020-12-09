@@ -147,6 +147,7 @@ int main() {
 								Event* ev = factory->createEvent(startTime1, endTime1, inName1, inDescription1);
 								c.addEvent(calculatedDayIndex1, ev);
 								cout << addEventComplete << endl;
+								delete factory;
 							} else {
 								cout << invalidInputMM << endl;
 							}
