@@ -30,7 +30,8 @@ string Event::numToTime(int num) const {
   else ampm = " PM";
   int hour = num/60 % 12;
   if(hour == 0) hour = 12;
-  int minute = num - hour*60;
+  int actualHour = num/60;
+  int minute = num - actualHour*60;
   string minuteString = std::to_string(minute);
   if(minuteString.size() == 1) minuteString = "0" + minuteString;
 

@@ -49,5 +49,10 @@ TEST(EventFactoryTestSet, makeEvent3) {
     EXPECT_EQ(ev->getDescription(), "I am the bone of my sword");
     EXPECT_EQ(ev->getDuration(), 465);
     EXPECT_EQ(ev->numToTime(660), "11:00 AM");
+    EXPECT_EQ(ev->numToTime(0), "12:00 AM");
+    EXPECT_EQ(ev->numToTime(720), "12:00 PM");
+    EXPECT_EQ(ev->numToTime(1080), "6:00 PM");
+    EXPECT_EQ(ev->numToTime(585), "9:45 AM");
+    EXPECT_EQ(ev->numToTime(1305), "9:45 PM");
 }
 #endif
