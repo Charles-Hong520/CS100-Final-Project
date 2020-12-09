@@ -18,6 +18,7 @@ int main() {
     calendarObj.addEvent(4, e);
     calendarObj.addEvent(31, e);
     calendarObj.addEvent(33, e);
+    calendarObj.addEvent(365, e);
     cout << "Testing days..." << endl;
     ClassObserver* obj = new DayState();
     tester.attach(obj);
