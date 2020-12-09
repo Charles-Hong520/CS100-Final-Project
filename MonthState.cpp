@@ -7,8 +7,8 @@ void MonthState::update(Calendar calendar, int num) {
     int daysToMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int count = 1;
     int totalDays = 0;
-    for(int i = 0; i < num; ++i) {
-	totalDays += daysToMonth[i];
+    for(int j = 0; j < num - 1; ++j) {
+	totalDays += daysToMonth[j];
     }
 
     for(int i = 0; i < daysToMonth[num - 1]; ++i) {
@@ -24,5 +24,6 @@ void MonthState::update(Calendar calendar, int num) {
 	    cout << "No events" << endl;
 	}
 	cout << endl;
+	totalDays++;
     }
 }

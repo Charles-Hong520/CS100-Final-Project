@@ -14,6 +14,10 @@ int main() {
     Calendar calendarObj;
     Event* e = new Event(0, 1, "doctor", "check-up", "2");
     calendarObj.addEvent(0, e);
+    calendarObj.addEvent(1, e);
+    calendarObj.addEvent(4, e);
+    calendarObj.addEvent(31, e);
+    calendarObj.addEvent(33, e);
     cout << "Testing days..." << endl;
     ClassObserver* obj = new DayState();
     tester.attach(obj);
