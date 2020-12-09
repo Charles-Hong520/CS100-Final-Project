@@ -1,4 +1,5 @@
 #include "Calendar.hpp"
+#include "Event.hpp"
 #include "CalendarInterface.hpp"
 #include "ClassObserver.hpp"
 #include "DayState.hpp"
@@ -11,6 +12,8 @@ using namespace std;
 int main() {
     CalendarInterface tester;
     Calendar calendarObj;
+    Event* e = new Event(0, 1, "doctor", "check-up", "2");
+    calendarObj.addEvent(0, e);
     cout << "Testing days..." << endl;
     ClassObserver* obj = new DayState();
     tester.attach(obj);
