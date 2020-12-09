@@ -39,6 +39,10 @@ AppointmentFactory.cpp
 ClassFactory.cpp
 EventFactory.cpp
 Minute.cpp
+    CalendarInterface.cpp
+    DayState.cpp
+    WeekState.cpp
+    MonthState.cpp
 client.cpp
 
 

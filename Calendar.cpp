@@ -34,6 +34,16 @@ using std::list;
 		calendar.resize(366); //This will be a 2020 calendar
 	} //will only have 1 year
 
+	Calendar::~Calendar() {
+		for(auto l : calendar) {
+			if(l.size() != 0) {
+				for(auto ev : l) {
+					if(ev) delete ev;
+				}
+			}
+		}
+	}
+
 	void Calendar::addEvent(int days, Event* event) {
 		calendar.at(days).push_back(event);
 	}

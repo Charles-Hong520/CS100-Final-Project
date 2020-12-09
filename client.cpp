@@ -16,6 +16,7 @@
 #include "WeekIndex.hpp"
 #include "MonthIndex.hpp"
 
+#include "CalendarInterface.hpp"
 #include "ClassObserver.hpp"
 #include "DayState.hpp"
 #include "WeekState.hpp"
@@ -27,7 +28,7 @@ using namespace std;
 
 string intro = "\nCalendar App, by CH, KM, ZW\n";
 string promptMain = "\nSelect the following options to use the calendar.\n";
-string menu = "\n1. Add Event\n2. Remove Event\n3. View Event Details\n4. Determine Busyness\n";
+string menu = "\n1. Add Event\n2. Remove Event\n3. View Event Details\n4. Determine Busyness\n5. View Events\n6. Quit\n";
 
 string invalidInputMM = "\nInvalid input, going back to main menu.\n";
 string invalidInputName = "\nInvalid input, Need a name! Going back to main menu.\n";
@@ -40,6 +41,8 @@ string promptStartTime1 = "\nEnter Starting Time of the Event, followed by an AM
 string promptEndTime1 = "\nEnter Ending Time of the Event, followed by an AM or PM\n";
 string promptDescription1 = "\nEnter Description of the Event\n";
 string addEventComplete = "\nEvent has been created\n";
+
+string promptView5 = "\nSelect Viewing Options:\n1. View a Day\n2. View a Week\n3. View a Month\n";
 
 string exitProgram = "\nExiting program\n";
 
@@ -58,48 +61,62 @@ bool isNumber(string input) {
 	return true;
 }
 
+int cinInt() {
+	string input;
+	getline(cin, input);
+	if(isNumber(input)) return std::stoi(input);
+	else return -1;
+}
+
+int cinInt(char stopper) {
+	string input;
+	getline(cin, input, stopper);
+	if(isNumber(input)) return std::stoi(input);
+	else return -1;
+}
+
 int main() {
 
 	Calendar c;
 
+	CalendarInterface ci;
 
 	cout << intro << endl;
 	cout << promptMain << menu << endl;
-	string menuInputString; getline(cin, menuInputString);
-	int menuInput = 0;
-	if(isNumber(menuInputString)) {
-		menuInput = std::stoi(menuInputString);
-	}
+
+	int menuInput = cinInt();
+
 
 
 	while(menuInput != 6) {
 
 		if(menuInput == 1) {
 			cout << promptTag1 << endl;
-			int inNum1; cin >> inNum1;
+			int inNum1 = cinInt();
 			if(inNum1 >= 1 && inNum1 <= 3) {
 
 				int inMonth1, inDay1;
 				cout << promptDate1 << endl;
-				cin >> inMonth1 >> inDay1;
+	
+				inMonth1 = cinInt(' ');
+				inDay1 = cinInt();
 				int calculatedDayIndex1 = c.dateToDays(inMonth1, inDay1);
 				if(calculatedDayIndex1 != -1) {
 
-					string inName1;
+					string inName1 = "";
 					cout << promptName1 << endl;
-					cin.ignore();
 					getline(cin, inName1); cout << endl;
 					if(inName1 != "") {
 						Minute min;
 
-						string inStartTime1;
+						string inStartTime1 = "";
 						cout << promptStartTime1 << endl;
 					
 						getline(cin, inStartTime1); cout << endl;
 						min.parse(inStartTime1);
 						int startTime1 = min.getMinute();
 						if(startTime1 != -1) {
-							string inEndTime1;
+							string inEndTime1 = "";
 							cout << promptEndTime1 << endl;
 						
 							getline(cin, inEndTime1); cout << endl;
@@ -145,18 +162,29 @@ int main() {
 		} else if(menuInput == 4) {
 			
 		} else if(menuInput == 5) {
-			
+
+			cout << promptView5 << endl;
+			int inNum5 = cinInt();
+			if(inNum5 >= 1 && inNum5 <= 3) {
+				if(inNum5 == 1) {
+
+				} else if(inNum5 == 2) {
+
+				} else {
+
+				}
+			} else {
+				cout << invalidInputMM << endl;
+			}
+
 		} else {
 			cout << invalidInputMM << endl << endl;
 		}
 
 		cout << promptMain << menu << endl;
-		cin.clear();
-		getline(cin, menuInputString);
-		menuInput = 0;
-		if(isNumber(menuInputString)) {
-			menuInput = std::stoi(menuInputString);
-		}
+
+		menuInput = cinInt();
+
 	}
 
 	cout << exitProgram << endl;

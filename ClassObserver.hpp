@@ -9,6 +9,7 @@ using namespace std;
 class ClassObserver {
     public:
 	ClassObserver() { };
+	~ClassObserver();
 	virtual void update(Calendar calendar, int num) = 0;
 };
 

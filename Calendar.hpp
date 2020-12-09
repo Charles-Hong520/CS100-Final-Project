@@ -16,6 +16,7 @@ protected:
 	vector<list<Event*> > calendar;
 public:
 	Calendar(); //will only have 1 year
+	~Calendar();
 
 	list<Event*> getDay(int days) {return calendar.at(days);}
 
