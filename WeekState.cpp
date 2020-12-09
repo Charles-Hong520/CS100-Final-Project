@@ -5,8 +5,13 @@ using namespace std;
 
 void WeekState::update(Calendar calendar, int num) {
     int count = 1;
-    for(int j = num; j < num + 7; ++j) {
-	int numDays = num;
+    int finalNum = num + 7;
+    for(int j = num; j < finalNum; ++j) {
+	if(j > 365) {
+	    j = 0;
+	    finalNum = num - 365 + 6;
+	}
+	int numDays = j;
         int monthCount = 1;
         int daysToMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30};
         for(int i = 0; i < 11; ++i) {
@@ -19,8 +24,8 @@ void WeekState::update(Calendar calendar, int num) {
 	}
    	cout << monthCount << "/" << numDays + 1 << endl;   
 
-    	if(calendar.getDay(num).size() != 0) {
-	    for(auto ev : calendar.getDay(num)) {
+    	if(calendar.getDay(j).size() != 0) {
+	    for(auto ev : calendar.getDay(j)) {
 	    	cout << count << ". " << ev -> getName() << endl;
 	    	count++;
 	    }
