@@ -220,7 +220,6 @@ int main() {
 					cout << "Enter a date" << endl;
 					monthInput = cinInt(' ');
 					dayInput = cinInt();
-					cout << monthInput << endl;
 					if(monthInput != -1 && dayInput != -1)
 					{
 						int dayCalc = c.dateToDays(monthInput, dayInput);
