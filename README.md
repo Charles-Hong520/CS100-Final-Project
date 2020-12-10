@@ -1,22 +1,7 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\<"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# Calendar App
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
- 
+# Calendar App 
  > Authors: [Charles Hong](https://github.com/Charles-Hong520), 
  > [Kunal Mittal](https://github.com/KunalMittal322), 
  > [Zhiyuan Wen](https://github.com/zhiyuanwen)
- 
- > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
- 
- > ## Expectations
- > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
- >   * Composite, Strategy, Abstract Factory, Visitor
- > * All three design patterns need to be linked together (it can't be three distinct projects)
- > * Your project should be implemented in C/C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
  > We decided to do a calendar because with the current outside situation, calendars have become an important tool in managing everyday lives. Our plans for the calendar are to just add events(pre-made) at the user’s request and later on, we can determine how busy the user is per day, week, or month providing more information and recommending possible alterations to their schedule.
