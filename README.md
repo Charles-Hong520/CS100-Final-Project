@@ -69,5 +69,5 @@
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+ > For the classes in our OMT diagram, with the exception of the client, we used googletest and eventually fit all of our tests into one big test file that we can run in one command.
+ > For our final product we just used an input file as our client input, and the client code took care of the rest. Whether the tests were sucessfull or not depended on human interpretation.
