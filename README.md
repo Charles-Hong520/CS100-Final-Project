@@ -49,6 +49,7 @@
  
 ## Class Diagram
  > ![PDF of Final OMT Diagram](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/CS100FinalOMT.pdf)
+ >
  > See above Design Document explanations for the 3 design patterns
  ## Screenshots
  > * BusynessIndex and Adding Event tests
