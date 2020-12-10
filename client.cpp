@@ -293,6 +293,24 @@ int main() {
 				else{
 					cout << "Invalid Input" << endl;
 				}
+				
+				if(busynessIndex < 2)
+				{
+					cout << "Not very busy" << endl;
+				}
+				else if(busynessIndex < 5)
+				{
+					cout << "Somewhat Busy" << endl;
+				}
+				else if(busynessIndex < 10)
+				{
+					cout << "You really be working hard" << endl;
+				}
+				else
+				{
+					cout << "..." << endl;
+				}
+				
 			}
 
 		} else if(menuInput == 5) {
