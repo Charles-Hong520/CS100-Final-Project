@@ -71,10 +71,10 @@
  > ![User output1](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.36.31%20PM.png)
  > ![User output2](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.36.43%20PM.png)
  ## Installation/Usage
- > Install on your computer with git clone --recursive https://github.com/cs100/final-project-chong039-kmitt006-zwen012
- > cmake3 . and make to generate test files
- > ./test will run test cases for making events and testing busyness, ./print_test will give examples of displaying events, ./main will run the entire program as a whole.
- > You can also run ./main < {input file} to have all inputs on seperate lines as shown in User input file example instead of having to input one by one.
+ > * Install on your computer with git clone --recursive https://github.com/cs100/final-project-chong039-kmitt006-zwen012
+ > * cmake3 . and make to generate test files
+ > * ./test will run test cases for making events and testing busyness, ./print_test will give examples of displaying events, ./main will run the entire program as a whole.
+ > * You can also run ./main < {input file} to have all inputs on seperate lines as shown in User input file example instead of having to input one by one.
  ## Testing
  > For the classes in our OMT diagram, with the exception of the client, we used googletest and eventually fit all of our tests into one big test file that we can run in one command with ./main.
  > For our final product we just used an input file as our client input, and the client code took care of the rest. From our perspective, it was a success although there are more things to implement.
