@@ -71,7 +71,7 @@
  >
  > ![Display test 1](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.59.07%20PM.png)
  > ![Display test 2](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.59.28%20PM.png)
- > ![Display test 3](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.59.34%20PM.png)
+ > \![Display test 3](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.59.34%20PM.png)
  > * User input file example
  > ![User input file example](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.32.25%20PM.png)
  > * User output file example
