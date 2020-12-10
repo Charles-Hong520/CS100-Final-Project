@@ -6,8 +6,7 @@
 ## Project Description
  > We decided to do a calendar because with the current outside situation, calendars have become an important tool in managing everyday lives. Our plans for the calendar are to just add events(pre-made) at the user’s request and later on, we can determine how busy the user is per day, week, or month providing more information and recommending possible alterations to their schedule.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [Qt](https://www.qt.io/) - GUI tool, will only use this provided we're ahead of schedule
- >   * [OpenGL](http://www.opengl-tutorial.org/) - GUI tool, will only use this provided we're ahead of schedule
+ >   * C++ Command line
  > * What will be the input/output of your project?
  >   * Command line Interface(input and output)
  >     * Input: We can have a simple line by line or specifically formatted prompt for the user to enter, or we can use an algorithm to parse the user's request to add an event to the calendar. This will be easier for the user, but harder to implement.
