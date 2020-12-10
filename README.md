@@ -65,6 +65,8 @@
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
+ > BusynessIndex and Adding Event Tests
+ > ![Busyness and Event tests](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.54.03%20PM.png)
  > User input file example
  > ![User input file example](https://github.com/cs100/final-project-chong039-kmitt006-zwen012/blob/master/Screen%20Shot%202020-12-09%20at%208.32.25%20PM.png)
  > User output file example
