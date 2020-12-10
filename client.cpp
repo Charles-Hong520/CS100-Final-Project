@@ -198,8 +198,8 @@ int main() {
 				cout << invalidInputMM << endl;
 			}
 		} else if(menuInput == 4) {
+			string typeChooseBusy = "";
 			cout << promptView4 << endl;
-			cin >> typeChooseBusy;
 			bool invalidInput = true;
 			int daysfromDate = 0;
 			int monthInput = 0;
@@ -212,20 +212,28 @@ int main() {
 			int numMins = 0;
 			int numEvents = 0;
 
-			string typeChooseBusy = "";
 			while(invalidInput)
 			{
+				cin >> typeChooseBusy;
 				if(typeChooseBusy == "D"){
 					cout << "Enter a date" << endl;
 					monthInput = cinInt(' ');
 					dayInput = cinInt();
-					int dayCalc = c.dateToDays(monthInput, dayInput);
-					for(auto ev : c.getDay(dayCalc))
+					if(monthInput != -1 || dayInput != -1)
 					{
-						numEvents++;
-						numMins += ev->getDuration();
+						int dayCalc = c.dateToDays(monthInput, dayInput);
+						for(auto ev : c.getDay(dayCalc))
+						{
+							numEvents++;
+							numMins += ev->getDuration();
+						}
+						busynessIndex = busyInput1.calculate(numMins, numEvents);
 					}
-					busynessIndex = busyInput1.calculate(numMins, numEvents);
+					else
+					{
+						cout << "Invalid Input" << endl;
+					}
+					
 					invalidInput = false;
 					numMins = 0;
 					numEvents = 0;
@@ -234,15 +242,23 @@ int main() {
 					cout << "Enter a date" << endl;
 					monthInput = cinInt(' ');
 					dayInput = cinInt();
-					int WeekCalc = c.dateToDays(monthInput, dayInput);
-					for(int i = 0; i < 7 && (WeekCalc + i) < 366; ++i)
+					if(monthInput != -1 || dayInput != -1)
 					{
-						for(auto ev : c.getDay(WeekCalc + i))
+						int WeekCalc = c.dateToDays(monthInput, dayInput);
+						for(int i = 0; i < 7 && (WeekCalc + i) < 366; ++i)
 						{
-							numEvents++;
-							numMins += ev->getDuration();
+							for(auto ev : c.getDay(WeekCalc + i))
+							{
+								numEvents++;
+								numMins += ev->getDuration();
+							}
 						}
 					}
+					else
+					{
+						cout << "Invalid Input" << endl;
+					}
+					
 					busynessIndex = busyInput2.calculate(numMins, numEvents);
 					numMins = 0;
 					numEvents = 0;
@@ -253,16 +269,26 @@ int main() {
 					numericalMonthInput = cinInt();
 					dayInput = 1;
 					int numDaysMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-					for(int i = 0; i < numDaysMonth[numericalMonthInput]; ++i)
+					if(numericalMonthInput > 0 && numericalMonthInput < 13)
 					{
-						for(auto ev : c.getDay(dayInput + i))
+						for(int i = 0; i < numDaysMonth[numericalMonthInput]; ++i)
 						{
-							numEvents++;
-							numMins += ev->getDuration();
+							for(auto ev : c.getDay(dayInput + i))
+							{
+								numEvents++;
+								numMins += ev->getDuration();
+							}
 						}
+						busynessIndex = busyInput3.calculate(numMins, numEvents);
 					}
-					busynessIndex = busyInput3.calculate(numMins, numEvents);
+					else
+					{
+						cout << "Invalid Input" << endl;
+					}
+					
 					invalidInput = false;
+					numEvents = 0;
+					numMins = 0;
 				}
 				else{
 					cout << "Invalid Input" << endl;
