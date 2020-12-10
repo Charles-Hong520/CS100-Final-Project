@@ -215,13 +215,12 @@ int main() {
 			while(invalidInput)
 			{
 				cout << "Enter D, W, or M" << endl;
-				cin >> typeChooseBusy;
+				getline(cin, typeChooseBusy);
 				if(typeChooseBusy == "D"){
 					cout << "Enter a date" << endl;
 					monthInput = cinInt(' ');
 					dayInput = cinInt();
 					cout << monthInput << endl;
-					cout << dayInput << endl;
 					if(monthInput != -1 && dayInput != -1)
 					{
 						int dayCalc = c.dateToDays(monthInput, dayInput);
@@ -295,15 +294,15 @@ int main() {
 				}
 				if(!invalidInput)
 				{
-					if(busynessIndex < 2)
+					if(busynessIndex < 10)
 					{
 						cout << "Not very busy" << endl;
 					}
-					else if(busynessIndex < 5)
+					else if(busynessIndex < 70)
 					{
 						cout << "Somewhat Busy" << endl;
 					}
-					else if(busynessIndex < 10)
+					else if(busynessIndex < 300)
 					{
 						cout << "You really be working hard" << endl;
 					}
