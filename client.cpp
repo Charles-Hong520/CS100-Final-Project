@@ -214,12 +214,15 @@ int main() {
 
 			while(invalidInput)
 			{
+				cout << "Enter D, W, or M" << endl;
 				cin >> typeChooseBusy;
 				if(typeChooseBusy == "D"){
 					cout << "Enter a date" << endl;
 					monthInput = cinInt(' ');
 					dayInput = cinInt();
-					if(monthInput != -1 || dayInput != -1)
+					cout << monthInput << endl;
+					cout << dayInput << endl;
+					if(monthInput != -1 && dayInput != -1)
 					{
 						int dayCalc = c.dateToDays(monthInput, dayInput);
 						for(auto ev : c.getDay(dayCalc))
@@ -228,21 +231,20 @@ int main() {
 							numMins += ev->getDuration();
 						}
 						busynessIndex = busyInput1.calculate(numMins, numEvents);
+						invalidInput = false;
+						numMins = 0;
+						numEvents = 0;
 					}
 					else
 					{
-						cout << "Invalid Input" << endl;
+						cout << "Invalid Input for D" << endl;
 					}
-					
-					invalidInput = false;
-					numMins = 0;
-					numEvents = 0;
 				}
 				else if(typeChooseBusy == "W"){
 					cout << "Enter a date" << endl;
 					monthInput = cinInt(' ');
 					dayInput = cinInt();
-					if(monthInput != -1 || dayInput != -1)
+					if(monthInput != -1 && dayInput != -1)
 					{
 						int WeekCalc = c.dateToDays(monthInput, dayInput);
 						for(int i = 0; i < 7 && (WeekCalc + i) < 366; ++i)
@@ -253,16 +255,15 @@ int main() {
 								numMins += ev->getDuration();
 							}
 						}
+						busynessIndex = busyInput2.calculate(numMins, numEvents);
+						numMins = 0;
+						numEvents = 0;
+						invalidInput = false;
 					}
 					else
 					{
-						cout << "Invalid Input" << endl;
+						cout << "Invalid Input for W" << endl;
 					}
-					
-					busynessIndex = busyInput2.calculate(numMins, numEvents);
-					numMins = 0;
-					numEvents = 0;
-					invalidInput = false;
 				}
 				else if(typeChooseBusy == "M"){
 					cout << "Enter a month number" << endl;
@@ -279,38 +280,39 @@ int main() {
 								numMins += ev->getDuration();
 							}
 						}
-						busynessIndex = busyInput3.calculate(numMins, numEvents);
+						busynessIndex = busyInput3.calculate(numMins, numEvents);				
+						invalidInput = false;
+						numEvents = 0;
+						numMins = 0;
 					}
 					else
 					{
-						cout << "Invalid Input" << endl;
+						cout << "Invalid Input for M" << endl;
 					}
-					
-					invalidInput = false;
-					numEvents = 0;
-					numMins = 0;
 				}
 				else{
 					cout << "Invalid Input" << endl;
 				}
-				
-				if(busynessIndex < 2)
+				if(!invalidInput)
 				{
-					cout << "Not very busy" << endl;
+					if(busynessIndex < 2)
+					{
+						cout << "Not very busy" << endl;
+					}
+					else if(busynessIndex < 5)
+					{
+						cout << "Somewhat Busy" << endl;
+					}
+					else if(busynessIndex < 10)
+					{
+						cout << "You really be working hard" << endl;
+					}
+					else
+					{
+						cout << "..." << endl;
+					}
 				}
-				else if(busynessIndex < 5)
-				{
-					cout << "Somewhat Busy" << endl;
-				}
-				else if(busynessIndex < 10)
-				{
-					cout << "You really be working hard" << endl;
-				}
-				else
-				{
-					cout << "..." << endl;
-				}
-				
+				invalidInput = false;
 			}
 
 		} else if(menuInput == 5) {
