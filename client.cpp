@@ -46,6 +46,8 @@ string promptView3 = "\nEnter the day that the event is on in this format: MM DD
 string promptSelect3 = "\nSelect the event number to view its full details\n";
 string emptyDay3 = "\nThere are no events on this day\n";
 
+string promptView4 = "\nIf you want to determine how busy you are in a Day, Week or Month, enter a date for Day, Week, or Month number\n";
+
 
 string promptView5 = "\nSelect Viewing Options:\n1. View a Day\n2. View a Week\n3. View a Month\n";
 string promptDay5 = "\nEnter the day you wish to view in this format: MM DD (ex: 5 23, 12 4, 10 31)\n";
@@ -196,7 +198,122 @@ int main() {
 				cout << invalidInputMM << endl;
 			}
 		} else if(menuInput == 4) {
-			
+			string typeChooseBusy = "";
+			cout << promptView4 << endl;
+			bool invalidInput = true;
+			int daysfromDate = 0;
+			int monthInput = 0;
+			int dayInput = 0;
+			int numericalMonthInput = 0;
+			DayIndex busyInput1;
+			WeekIndex busyInput2;
+			MonthIndex busyInput3;
+			double busynessIndex = 0;
+			int numMins = 0;
+			int numEvents = 0;
+
+			while(invalidInput)
+			{
+				cout << "Enter D, W, or M" << endl;
+				getline(cin, typeChooseBusy);
+				if(typeChooseBusy == "D"){
+					cout << "Enter a date" << endl;
+					monthInput = cinInt(' ');
+					dayInput = cinInt();
+					cout << monthInput << endl;
+					if(monthInput != -1 && dayInput != -1)
+					{
+						int dayCalc = c.dateToDays(monthInput, dayInput);
+						for(auto ev : c.getDay(dayCalc))
+						{
+							numEvents++;
+							numMins += ev->getDuration();
+						}
+						busynessIndex = busyInput1.calculate(numMins, numEvents);
+						invalidInput = false;
+						numMins = 0;
+						numEvents = 0;
+					}
+					else
+					{
+						cout << "Invalid Input for D" << endl;
+					}
+				}
+				else if(typeChooseBusy == "W"){
+					cout << "Enter a date" << endl;
+					monthInput = cinInt(' ');
+					dayInput = cinInt();
+					if(monthInput != -1 && dayInput != -1)
+					{
+						int WeekCalc = c.dateToDays(monthInput, dayInput);
+						for(int i = 0; i < 7 && (WeekCalc + i) < 366; ++i)
+						{
+							for(auto ev : c.getDay(WeekCalc + i))
+							{
+								numEvents++;
+								numMins += ev->getDuration();
+							}
+						}
+						busynessIndex = busyInput2.calculate(numMins, numEvents);
+						numMins = 0;
+						numEvents = 0;
+						invalidInput = false;
+					}
+					else
+					{
+						cout << "Invalid Input for W" << endl;
+					}
+				}
+				else if(typeChooseBusy == "M"){
+					cout << "Enter a month number" << endl;
+					numericalMonthInput = cinInt();
+					dayInput = 1;
+					int numDaysMonth[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+					if(numericalMonthInput > 0 && numericalMonthInput < 13)
+					{
+						for(int i = 0; i < numDaysMonth[numericalMonthInput]; ++i)
+						{
+							for(auto ev : c.getDay(dayInput + i))
+							{
+								numEvents++;
+								numMins += ev->getDuration();
+							}
+						}
+						busynessIndex = busyInput3.calculate(numMins, numEvents);				
+						invalidInput = false;
+						numEvents = 0;
+						numMins = 0;
+					}
+					else
+					{
+						cout << "Invalid Input for M" << endl;
+					}
+				}
+				else{
+					cout << "Invalid Input" << endl;
+				}
+				if(!invalidInput)
+				{
+					if(busynessIndex < 10)
+					{
+						cout << "Not very busy" << endl;
+					}
+					else if(busynessIndex < 70)
+					{
+						cout << "Somewhat Busy" << endl;
+					}
+					else if(busynessIndex < 300)
+					{
+						cout << "You really be working hard" << endl;
+					}
+					else
+					{
+						cout << "..." << endl;
+					}
+				}
+				invalidInput = false;
+			}
+
 		} else if(menuInput == 5) {
 
 			cout << promptView5 << endl;
